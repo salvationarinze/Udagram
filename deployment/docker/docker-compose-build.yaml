@@ -1,0 +1,18 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: .
+    image: modernbabbage/udagram-reverse-proxy
+  backend_user:
+    build:
+      context: ../../api-user
+    image: modernbabbage/udagram-users
+  backend_feed:
+    build:
+      context: ../../api-feed
+    image: modernbabbage/udagram-feeds
+  frontend:
+    build:
+      context: ../../frontend
+    image: modernbabbage/udagram-frontend:local

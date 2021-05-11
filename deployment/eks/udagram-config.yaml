@@ -1,0 +1,29 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1EVXhNVEE1TWpnd00xb1hEVE14TURVd09UQTVNamd3TTFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTTUrCjV2ak1lLzlJMEtGd0x2djRtSE1GZm5mQzluaU96ZUpHWVZNN0V4Y0V0V21BRTVKelNGZWdPS2tubUFwZndJYTMKY3lmZTlxNER3U3J0cElnRlNlNjJnakEyRGJBcUVwNENBTHlES2pKa0xxeU5aWDZMYWYxMjMzQnNaV0laeFlkaApGRjV1blFpb3llN0ltMmZCL2lycVhBdWdMNGZCczRvU0xndC9VWC9ObEtvTFN3Q3k5RDhPZTRqOHpMTjlvNkFZCjZjTUNXbDRRTFM4eHBVLy9XNFFOcUVUdHk0TlVZTTJndHcxbHQzcEk0cUtNS0IwNXozNjdQcGZsVjJ0UFhlSkgKWE16cmhyZkZrbUl3YVE3Ty9JcElUcWRLRzVjV0Q4KzBscGVxOXpVT01qeEZRMkIwUnptMjV1dDdaVDBGM1ZvTQpvN28ySk9JQk9FVHdWSHdIQlY4Q0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZERHFUdklibGVFcmxiZjI2eWlFREZ4NHYvWGpNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDcGN5RWJmTU1XMjFFNmZlODZ2ZDM2aXpXNEJ5VndaY25nRmF1cU14eTI4Mm1DdXVKWgprczlNRE1xeDJRemdzOGdHZFhuRlFiSHRYYWdFZE0wdDJlYmthell2OW9TNkEzRWVWYUtCayt4cXR2THcyUE9qCnkybnZJNlladlU3dWpzMEtlTjVKLzdwdnoxdGRMNWEzYmxpUGovVklTUnhFeFpNSkhVT0VsNzVvOG1QSjhTb2oKeDVJbDd0MXl6elFPUHFCRWUyUVJjNFQ2dlhRUkpBSmFFZkJxUnlidzVNclI3eWkwZUd3M3BmRytpSWJWdTgzRgpBNjlVK1lFUVpEMkhOdjBFR3ROS09IWnE0Z0FVMEl6ZDczUE5tdDVWN3BmcHF1aFZBOU1nTmgvWEJ2UnVZUmRkClNNcDhzU0RVOXIwaFBPdHFrQXY0cC9xZVR0OEVHb1V4dDFYVQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://D7D0798AC0847B35DA03845D9D757E12.gr7.us-east-2.eks.amazonaws.com
+  name: udagram.us-east-2.eksctl.io
+contexts:
+- context:
+    cluster: udagram.us-east-2.eksctl.io
+    user: iam-root-account@udagram.us-east-2.eksctl.io
+  name: iam-root-account@udagram.us-east-2.eksctl.io
+current-context: iam-root-account@udagram.us-east-2.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: iam-root-account@udagram.us-east-2.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - token
+      - -i
+      - udagram
+      command: aws-iam-authenticator
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
+      - name: AWS_DEFAULT_REGION
+        value: us-east-2
