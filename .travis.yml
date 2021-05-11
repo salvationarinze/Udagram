@@ -17,25 +17,25 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-  # install kubenetes
-  - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-  - chmod +x ./kubectl
-  - sudo mv ./kubectl /usr/local/bin/kubectl
-
-  # aws authenticator
-  - curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/aws-iam-authenticator
-  - chmod +x ./aws-iam-authenticator
-  - sudo mv ./aws-iam-authenticator /usr/local/bin/
-  - aws-iam-authenticator version
-
-  # cluster config
-  - mkdir -p ${HOME}/.kube
-  - cp deployment/eks/kubeconfig-template.yaml ${HOME}/.kube/config
-  - export KUBECONFIG=${HOME}/.kube/config
-  - kubectl config set clusters.kubernetes.certificate-authority-data "$CERTIFICATE"
-  - kubectl config set clusters.kubernetes.server "$ENDPOINT"
-  - kubectl get deployments
-  - kubectl version
+#  # install kubenetes
+#  - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+#  - chmod +x ./kubectl
+#  - sudo mv ./kubectl /usr/local/bin/kubectl
+#
+#  # aws authenticator
+#  - curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/aws-iam-authenticator
+#  - chmod +x ./aws-iam-authenticator
+#  - sudo mv ./aws-iam-authenticator /usr/local/bin/
+#  - aws-iam-authenticator version
+#
+#  # cluster config
+#  - mkdir -p ${HOME}/.kube
+#  - cp deployment/eks/kubeconfig-template.yaml ${HOME}/.kube/config
+#  - export KUBECONFIG=${HOME}/.kube/config
+#  - kubectl config set clusters.kubernetes.certificate-authority-data "$CERTIFICATE"
+#  - kubectl config set clusters.kubernetes.server "$ENDPOINT"
+#  - kubectl get deployments
+#  - kubectl version
 
 jobs:
   include:
