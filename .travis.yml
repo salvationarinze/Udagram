@@ -43,9 +43,9 @@ jobs:
       script:
         - cd deployment/docker
         - docker-compose -f docker-compose-build.yaml build --parallel
-        - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_LOGIN" --password-stdin
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - docker-compose -f docker-compose-build.yaml push
-        - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_LOGIN" --password-stdin
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - docker-compose -f docker-compose-build.yaml push
 
 #    - stage: aws_eks_deploy
