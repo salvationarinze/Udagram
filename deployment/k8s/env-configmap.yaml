@@ -9,6 +9,6 @@ data:
   POSTGRESS_PASSWORD: udagram1
   POSTGRESS_DB: postgres
   POSTGRESS_HOST: udagram.cn6nvxbahyln.us-east-2.rds.amazonaws.com
-  URL: http://localhost:8100
+  URL: http://a85ea513cb34d480f9c1fa1305f554a3-1532298788.us-east-2.elb.amazonaws.com:8100
 metadata:
   name: env-config
